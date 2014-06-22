@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "backup", ">= 4.0.0"
-  spec.add_development_dependency "qiniu", ">= 6.2.0"
+  spec.add_dependency "backup", ">= 4.0.0"
+  spec.add_dependency "qiniu", ">= 6.2.0"
+
 end
