@@ -3,6 +3,7 @@ require 'qiniu'
 module Backup
   module Storage
     class Qiniu < Base
+      include Backup::Storage::Cycler
 
       attr_accessor :access_key, :access_key_secret, :bucket, :path
 
