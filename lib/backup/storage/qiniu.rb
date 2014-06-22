@@ -24,8 +24,8 @@ module Backup
           dest = File.join(remote_path, filename)
 
           Logger.info "#{storage_name} uploading '#{ dest }'..."
-          upload_token = Qiniu.generate_upload_token :scope => bucket
-          result = Qiniu.upload_file :uptoken => upload_token,
+          upload_token = ::Qiniu.generate_upload_token :scope => bucket
+          result = ::Qiniu.upload_file :uptoken => upload_token,
                                      :file => src,
                                      :bucket => bucket,
                                      :key => dest
@@ -38,14 +38,14 @@ module Backup
         remote_path = remote_path_for(package)
         establish_connection!
 
-        raise "#{storage_name} delete #{remote_path} failed" unless Qiniu.delete(bucket, remote_path)
+        raise "#{storage_name} delete #{remote_path} failed" unless ::Qiniu.delete(bucket, remote_path)
 
       end
 
       def establish_connection!
         raise 'access_key is missing' if access_key.nil?
         raise 'access_key_secret is missing' if access_key_secret.nil?
-        Qiniu.establish_connection! :access_key => access_key, :secret_key => access_key_secret
+        ::Qiniu.establish_connection! :access_key => access_key, :secret_key => access_key_secret
       end
 
     end
