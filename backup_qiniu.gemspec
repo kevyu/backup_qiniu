@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "backup_qiniu"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Haibin Yu"]
   spec.email         = ["seashineyu@gmail.com"]
   spec.description   = %q{Backup storage for supporting Qiniu cloud}
