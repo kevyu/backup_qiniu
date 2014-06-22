@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.version       = "0.1.0"
   spec.authors       = ["Haibin Yu"]
   spec.email         = ["seashineyu@gmail.com"]
-  spec.description   = %q{backup storage for qiniu}
+  spec.description   = %q{Backup storage for supporting Qiniu cloud}
   spec.summary       = %q{backup storage for qiniu}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/kevyu/backup_qiniu"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

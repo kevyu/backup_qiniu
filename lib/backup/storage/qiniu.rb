@@ -38,7 +38,10 @@ module Backup
         remote_path = remote_path_for(package)
         establish_connection!
 
-        raise "#{storage_name} delete #{remote_path} failed" unless ::Qiniu.delete(bucket, remote_path)
+        package.filenames.each do |filename|
+          dest = File.join(remote_path, filename)
+          raise "#{storage_name} delete #{remote_path} failed" unless ::Qiniu.delete(bucket, dest)
+        end
 
       end
 
