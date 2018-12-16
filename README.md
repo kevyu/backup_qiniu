@@ -29,7 +29,7 @@ Backup::Model.new(:foo, 'Description for foo') do
 
   # 配置 Qiniu 作为备份存储方式
   store_with "Qiniu" do |qiniu|
-    qiniu.access_key_id = 'my_access_id'
+    qiniu.access_key = 'my_access_id'
     qiniu.access_key_secret = 'my_access_key'
     qiniu.bucket = 'bucket-name'
     qiniu.path = '/path/to/my/backups'
